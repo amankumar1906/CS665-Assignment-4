@@ -1,38 +1,36 @@
 /**
- * Name: FIRST_NAME LAST_NAME
- * Course: CS-665 Software Designs & Patterns
- * Date: MM/DD/YYYY
+ * Name: Aman Kumar
+ * Course: CS-665 Software Design and Patterns
+ * Date: 03/18/2024
  * File Name: Main.java
  * Description: Write a description for this class
  */
 
 package edu.bu.met.cs665;
 
-import edu.bu.met.cs665.example1.Person;
+import edu.bu.met.cs665.example1.Client;
+import edu.bu.met.cs665.example1.CustomerDataHTTPS;
+import edu.bu.met.cs665.example1.CustomerDataUSB;
+import edu.bu.met.cs665.example1.LegacyCustomerSystem;
+import edu.bu.met.cs665.example1.CustomerDataAdapter;
 
 /**
  * This is the Main class.
  */
 public class Main {
 
-  /**
-   * A main method to run examples.
-   * You may use this method for development purposes as you start building your
-   * assignments/final project.  This could prove convenient to test as you are developing.
-   * However, please note that every assignment/final projects requires JUnit tests.
-   */
   public static void main(String[] args) {
-    System.out.println("This is a test message from the Main class (Main.java file)");
-  }
+    // Create an instance of the LegacyCustomerSystem
+    CustomerDataUSB legacySystem = new LegacyCustomerSystem();
 
-  /**
-   * This method performs XYZ and returns String.
-   *
-   * @return String
-   */
-  private String doIt() {
-    Person student = new Person("John", "Doe");
-    return student.getLastName() + ',' + student.getFirstName();
-  }
+    // Create an adapter for the legacy system, so it can be used as CustomerData_HTTPS
+    CustomerDataHTTPS customerDataHttps = new CustomerDataAdapter(legacySystem);
 
+    // Create a client with the adapted interface
+    Client client = new Client(customerDataHttps);
+
+    // Use the client to fetch and print customer data
+    int customerId = 123; // Example customer ID
+    client.fetchAndPrintCustomerData(customerId);
+  }
 }
