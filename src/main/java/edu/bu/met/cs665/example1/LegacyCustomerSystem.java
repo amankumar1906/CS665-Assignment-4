@@ -7,15 +7,15 @@ package edu.bu.met.cs665.example1;
  * File Name: LegacyCustomerSystem.java
  * Description: This class represents a legacy system for retrieving customer data via USB.
  */
-public class LegacyCustomerSystem implements CustomerDataUSB {
+public class LegacyCustomerSystem implements CustomerDataUsb {
   @Override
-  public void printCustomer_USB(int customerId) {
+  public void printCustomer_Usb(int customerId) {
     // Mock implementation of printing customer data over USB
     System.out.println("Legacy system is printing customer data for customer ID: " + customerId);
   }
 
   @Override
-  public void getCustomer_USB(int customerId) {
+  public void getCustomer_Usb(int customerId) {
     // Mock implementation of retrieving customer data over USB
     System.out.println("Legacy system is retrieving customer data for customer ID: " + customerId);
   }

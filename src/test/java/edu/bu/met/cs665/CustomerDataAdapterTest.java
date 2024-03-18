@@ -3,14 +3,15 @@ package edu.bu.met.cs665;
 import static org.junit.Assert.assertTrue;
 
 import edu.bu.met.cs665.example1.CustomerDataAdapter;
-import edu.bu.met.cs665.example1.CustomerDataHTTPS;
+import edu.bu.met.cs665.example1.CustomerDataHttps;
+import edu.bu.met.cs665.example1.CustomerDataHttps;
 import edu.bu.met.cs665.example1.LegacyCustomerSystem;
 import org.junit.Before;
 import org.junit.Test;
 
 public class CustomerDataAdapterTest {
 
-  private CustomerDataHTTPS adapter;
+  private CustomerDataHttps adapter;
   private LegacyCustomerSystem legacySystem;
 
   @Before
@@ -28,9 +29,9 @@ public class CustomerDataAdapterTest {
   }
 
   @Test
-  public void testGetCustomer_HTTPS() {
+  public void testGetCustomer_Https() {
     // When: we call getCustomer_HTTPS on the adapter
-    adapter.getCustomer_HTTPS(200);
+    adapter.getCustomer_Https(200);
 
     // Then: we check if the getCustomer_USB method of the legacy system was called
     // Again, without a return type, we can't assert on output, only behavior.
@@ -50,7 +51,7 @@ public class CustomerDataAdapterTest {
   @Test
   public void testAdapterForDifferentCustomerIDs() {
     // When: we use the adapter for a different customer ID
-    adapter.getCustomer_HTTPS(400);
+    adapter.getCustomer_Https(400);
 
     // Then: it should work for any customer ID we pass in
     assertTrue(true); // Placeholder for demonstration purposes.
@@ -59,7 +60,7 @@ public class CustomerDataAdapterTest {
   @Test
   public void testLegacySystemDirectly() {
     // When: we use the legacy system directly
-    legacySystem.printCustomer_USB(500);
+    legacySystem.printCustomer_Usb(500);
 
     // Then: it should perform the action as expected, without the adapter
     assertTrue(true); // Placeholder, assuming the direct call was successful.

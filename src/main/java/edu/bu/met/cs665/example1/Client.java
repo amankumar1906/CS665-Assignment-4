@@ -8,14 +8,14 @@ package edu.bu.met.cs665.example1;
  * Description: This class represents the client that interacts with the Target interface.
  */
 public class Client {
-  private final CustomerDataHTTPS customerDataHttps;
+  private final CustomerDataHttps customerDataHttps;
 
   /**
    * Constructor for Client.
    *
    * @param customerDataHttps the target interface that the client will use
    */
-  public Client(CustomerDataHTTPS customerDataHttps) {
+  public Client(CustomerDataHttps customerDataHttps) {
     this.customerDataHttps = customerDataHttps;
   }
 
@@ -26,6 +26,6 @@ public class Client {
    */
   public void fetchAndPrintCustomerData(int customerId) {
     customerDataHttps.printCustomer(customerId);
-    customerDataHttps.getCustomer_HTTPS(customerId);
+    customerDataHttps.getCustomer_Https(customerId);
   }
 }
