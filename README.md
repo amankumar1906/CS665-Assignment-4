@@ -8,9 +8,11 @@
 
 # Assignment Overview
 Please add a paragraph or two overviewing the objectives of the assignment.
-
+The objective of the assignment is to integrate an outdated legacy system's API with a new system's interface using the Adapter Design Pattern.
+The created adapter (CustomerDataAdapter) ensures the new system's methods can be invoked, while internally using the legacy system's functionality.
+The solution includes JUnit tests to validate the adapter's operations, providing a reliable, maintainable, and flexible integration that can be easily extended in the future.
 # GitHub Repository Link:
-https://github.com/{YOUR_USERNAME}/cs-665-assignment-{ASSIGNMENT_NUMBER}
+https://github.com/amankumar1906/CS665-Assignment-4
 
 # Implementation Description 
 
@@ -19,11 +21,26 @@ For each assignment, please answer the following:
 
 - Explain the level of flexibility in your implementation, including how new object types can
 be easily added or removed in the future.
+Answer: The implementation employs the Adapter Design Pattern, which inherently offers a high level of flexibility.
+If in the future the system needs to support a new way of accessing customer data, we can simply create a new adapter without modifying the existing client code or the interfaces.
+This allows for easy extension and modification, demonstrating the Open/Closed Principle of software engineering where the system is open for extension but closed for modification.
+
 - Discuss the simplicity and understandability of your implementation, ensuring that it is
 easy for others to read and maintain.
+Answer: Simplicity and understandability are achieved through clear, concise code and thorough documentation.
+Each class and method has a specific purpose that aligns with the single responsibility principle.
+The use of descriptive names and Javadoc comments ensures that other developers can easily comprehend the purpose and functionality of each component.
+
 - Describe how you have avoided duplicated code and why it is important.
+Answer: Duplicated code is avoided by ensuring that all customer data retrieval logic is centralized within the specific implementations of the legacy and new system classes.
+The adapter then calls these methods as needed, preventing the need to repeat logic across different parts of the application.
+Avoiding duplication is crucial for maintainability, as it reduces the risk of inconsistencies and minimizes the effort required for updates or bug fixes.
+
 - If applicable, mention any design patterns you have used and explain why they were
 chosen.
+Answer: The Adapter Design Pattern was chosen for its suitability in integrating interfaces that otherwise would not be compatible.
+It allows the client to continue using the new system's interface (CustomerDataHttps) while internally the calls are translated into the legacy system's methods (CustomerDataUsb).
+This pattern was chosen because it provides a clean and maintainable way to bridge the gap between new and old systems without invasive changes to the existing codebase.
 
 
 # Maven Commands
