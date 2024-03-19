@@ -4,7 +4,6 @@ import static org.junit.Assert.assertTrue;
 
 import edu.bu.met.cs665.example1.CustomerDataAdapter;
 import edu.bu.met.cs665.example1.CustomerDataHttps;
-import edu.bu.met.cs665.example1.CustomerDataHttps;
 import edu.bu.met.cs665.example1.LegacyCustomerSystem;
 import org.junit.Before;
 import org.junit.Test;
